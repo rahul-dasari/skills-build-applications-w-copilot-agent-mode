@@ -1,10 +1,14 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  color: #22223b;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.octofit-logo {
+  height: 60px;
+  margin-right: 20px;
+  vertical-align: middle;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +18,95 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: transparent;
+  color: #22223b;
 }
 
-.App-link {
-  color: #61dafb;
+.App-link, a {
+  color: #3a86ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.App-link:hover, a:hover {
+  color: #ff006e;
+}
+
+/* Navbar styling */
+.navbar {
+  background: linear-gradient(90deg, #3a86ff 0%, #8338ec 100%) !important;
+  box-shadow: 0 2px 8px rgba(58,134,255,0.08);
+}
+.navbar-brand {
+  font-weight: bold;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+}
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #ffbe0b !important;
+}
+
+/* Headings */
+h1, .display-4 {
+  color: #3a86ff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+h2, h3, h4, h5, h6 {
+  color: #8338ec;
+}
+
+/* Table styling */
+table {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(58,134,255,0.08);
+  overflow: hidden;
+}
+th {
+  background: #3a86ff;
+  color: #fff;
+  font-weight: 600;
+}
+td {
+  background: #f1f3f8;
+  color: #22223b;
+}
+tr:nth-child(even) td {
+  background: #e0eafc;
+}
+
+/* Button styling */
+.btn, button {
+  background: linear-gradient(90deg, #ffbe0b 0%, #fb5607 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover, button:hover {
+  background: linear-gradient(90deg, #8338ec 0%, #ff006e 100%);
+  color: #fff;
+}
+
+/* Container and card */
+.container, .card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(58,134,255,0.08);
+}
+
+/* Misc */
+.py-4 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
 @keyframes App-logo-spin {

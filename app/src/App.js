@@ -9,13 +9,19 @@ import Teams from './components/Teams';
 import Users from './components/Users';
 import Workouts from './components/Workouts';
 
-function App() {
   return (
     <Router>
       <div className="App bg-light min-vh-100">
         <Navbar bg="primary" variant="dark" expand="lg">
           <Container>
-            <Navbar.Brand as={Link} to="/">Octofit Tracker</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">
+              <img
+                src={process.env.PUBLIC_URL + '/octofitapp-small.png'}
+                alt="Octofit Logo"
+                className="octofit-logo"
+              />
+              Octofit Tracker
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
