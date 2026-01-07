@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table, Button, Card } from 'react-bootstrap';
 
 const Workouts = () => {
   const [data, setData] = useState([]);
@@ -17,14 +18,34 @@ const Workouts = () => {
   }, [endpoint]);
 
   return (
-    <div>
-      <h2>Workouts</h2>
-      <ul>
-        {data.map((workout, idx) => (
-          <li key={workout.id || idx}>{workout.name || JSON.stringify(workout)}</li>
-        ))}
-      </ul>
-    </div>
+    <Card className="mb-4">
+      <Card.Body>
+        <Card.Title as="h2" className="mb-3">Workouts</Card.Title>
+        <Table striped bordered hover responsive>
+          <thead className="table-danger">
+            <tr>
+              <th>Workout</th>
+              <th>Type</th>
+              <th>Duration</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Example row */}
+            <tr>
+              <td>Push Ups</td>
+              <td>Strength</td>
+              <td>10 min</td>
+              <td>
+                <Button variant="primary" size="sm">Edit</Button>{' '}
+                <Button variant="danger" size="sm">Delete</Button>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+        <Button variant="success">Add Workout</Button>
+      </Card.Body>
+    </Card>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table, Card } from 'react-bootstrap';
 
 const Leaderboard = () => {
   const [data, setData] = useState([]);
@@ -17,14 +18,28 @@ const Leaderboard = () => {
   }, [endpoint]);
 
   return (
-    <div>
-      <h2>Leaderboard</h2>
-      <ul>
-        {data.map((entry, idx) => (
-          <li key={entry.id || idx}>{entry.name || JSON.stringify(entry)}</li>
-        ))}
-      </ul>
-    </div>
+    <Card className="mb-4">
+      <Card.Body>
+        <Card.Title as="h2" className="mb-3">Leaderboard</Card.Title>
+        <Table striped bordered hover responsive>
+          <thead className="table-success">
+            <tr>
+              <th>Rank</th>
+              <th>User</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Example row */}
+            <tr>
+              <td>1</td>
+              <td>Superman</td>
+              <td>1200</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Card.Body>
+    </Card>
   );
 };
 
